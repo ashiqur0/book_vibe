@@ -1,9 +1,10 @@
 import React from 'react';
+import Banner from '../../components/Banner/Banner';
 
-const Home = () => {
+const Home = ({isDarkMode}) => {
     return (
         <div>
-            <h1>From home</h1>
+            <Banner isDarkMode={isDarkMode}/>
         </div>
     );
 };

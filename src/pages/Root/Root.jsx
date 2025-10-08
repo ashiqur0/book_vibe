@@ -3,16 +3,12 @@ import Navbar from '../../components/Header/Navbar';
 import { Outlet } from 'react-router';
 import Footer from '../../components/Footer/Footer';
 
-const Root = () => {
-
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark').matches;
+const Root = ({isDarkMode}) => {
 
     return (
-        <div className={`work-sans-font ${isDarkMode? 'bg-slate-900' : 'bg-white'}`}>
-            <div className=''>
-                <Navbar isDarkMode={isDarkMode}></Navbar>
-                <Outlet></Outlet>
-            </div>
+        <div className={`work-sans-font ${isDarkMode ? 'bg-slate-900' : 'bg-white'}`}>
+            <Navbar isDarkMode={isDarkMode}></Navbar>
+            <Outlet></Outlet>
             <Footer></Footer>
         </div>
     );
