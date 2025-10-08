@@ -28,12 +28,12 @@ const Navbar = ({ isDarkMode }) => {
                     hover:shadow-sm ${isDarkMode ? 'shadow-white' : 'shadow-slate-400'} py-1 rounded-md`}>{links}
                     </ul>
 
-                    <a href='/' className='cursor-pointer'>Book Vibe</a>
+                    <a href='/' className='cursor-pointer text-3xl font-bold'>Book Vibe</a>
                 </div>
 
                 <ul className='md:flex hidden'>{links}</ul>
 
-                <div className='flex gap-4 font-semibold text-white'>
+                <div className='md:flex hidden gap-4 font-semibold text-white'>
                     <button className='bg-lime-500 px-7 py-2 rounded-md cursor-pointer'>Sign In</button>
                     <button className='bg-blue-400 px-7 py-2 rounded-md cursor-pointer'>Sign Up</button>
                 </div>
