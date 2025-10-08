@@ -5,13 +5,15 @@ import Footer from '../../components/Footer/Footer';
 
 const Root = () => {
 
-    const isDarkMode = window.matchMedia('(prefers-scheme-color: dark').matches;
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark').matches;
 
     return (
-        <div className='work-sans-font max-w-320 mx-auto px-5'>
-            <Navbar isDarkMode={isDarkMode}></Navbar>
-            {/* <Outlet></Outlet>
-            <Footer></Footer> */}
+        <div className={`work-sans-font ${isDarkMode? 'bg-slate-900' : 'bg-white'}`}>
+            <div className=''>
+                <Navbar isDarkMode={isDarkMode}></Navbar>
+                <Outlet></Outlet>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };
