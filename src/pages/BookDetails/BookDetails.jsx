@@ -1,13 +1,16 @@
-import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import '../../App.css'
+import { addToStoredDB } from '../../utility/addToDb';
 
-const BookDetails = () => {
+const BookDetails = ({isDarkMode}) => {
     const { id } = useParams();
     const booksData = useLoaderData();
     const selectedBook = booksData.find(book => book.bookId === parseInt(id));
-    console.log(selectedBook);
     const { image, bookName, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = selectedBook;
+
+    const handleMarkAsRead = id => {
+        addToStoredDB(id);
+    }
 
     return (
         <div className='mt-13 mb-15 md:mb-25 lg:mb-30 px-4'>
@@ -25,7 +28,7 @@ const BookDetails = () => {
 
                     <p className='mb-6'>
                         <span className='font-bold'>Review : </span>
-                        <span className='text-gray-400 text-justify'>{review}</span>
+                        <span className={`${isDarkMode? 'text-gray-400':'text-gray-700'} text-justify`}>{review}</span>
                     </p>
 
                     <div className='flex gap-3 items-center'>
@@ -37,8 +40,8 @@ const BookDetails = () => {
                         }
                     </div>
 
-                    <div className='flex gap-8 md:gap-16 items-center border-t-1 border-gray-400 mt-6 pt-6 mb-8'>
-                        <div className='text-gray-400'>
+                    <div className={`flex gap-8 md:gap-16 items-center border-t-1 border-gray-400 mt-6 pt-6 mb-8`}>
+                        <div className={`${isDarkMode? 'text-gray-400':'text-gray-800'} font-medium`}>
                             <h4>Number of Pages:</h4>
                             <h4>Publisher:</h4>
                             <h4>Year of Publishing:</h4>
@@ -51,13 +54,14 @@ const BookDetails = () => {
                             <h4>{rating}</h4>
                         </div>
                     </div>
-                    <div className='flex gap-4 font-semibold text-white'>
-                        <button className='border-1 border-gray-400 px-7 py-2 md:py-3 rounded-md cursor-pointer'>Read</button>
-                        <button className='bg-blue-400 px-7 py-2 md:py-3 rounded-md cursor-pointer'>Wishlist</button>
+                    <div className='flex gap-4 font-semibold'>
+                        <button
+                            onClick={() => handleMarkAsRead(id)}
+                            className='border-1 border-gray-400 px-7 py-2 md:py-3 rounded-md cursor-pointer'>Read</button>
+                        <button className='bg-blue-400 px-7 py-2 md:py-3 rounded-md cursor-pointer text-white'>Wishlist</button>
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };

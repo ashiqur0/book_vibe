@@ -1,11 +1,11 @@
 import React from 'react';
 
-const PageToRead = () => {
+const WishList = () => {
     return (
         <div>
-            pageToRead page
+            WishList page
         </div>
     );
 };
 
-export default PageToRead;
+export default WishList;
