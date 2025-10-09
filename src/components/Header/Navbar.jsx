@@ -4,8 +4,8 @@ import { Menu, X } from 'lucide-react';
 
 const navigationData = [
     { "name": "Home", "path": "/", "id": 1 },
-    { "name": "Listed Books", "path": "/about", "id": 2 },
-    { "name": "Pages to Read", "path": "/services", "id": 3 }
+    { "name": "Listed Books", "path": "/listedBooks", "id": 2 },
+    { "name": "Pages to Read", "path": "/pageToRead", "id": 3 }
 ];
 
 const Navbar = ({ isDarkMode }) => {
