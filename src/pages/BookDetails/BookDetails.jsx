@@ -10,13 +10,13 @@ const BookDetails = () => {
     const { image, bookName, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = selectedBook;
 
     return (
-        <div className='mt-13 mb-41 px-4'>
-            <div className='flex gap-12 items-center max-w-320 mx-auto '>
-                <div className='flex justify-center items-center bg-gray-200 w-1/2 rounded-2xl'>
-                    <img className='h-full p-18' src={image} alt="" />
+        <div className='mt-13 mb-15 md:mb-25 lg:mb-30 px-4'>
+            <div className='flex flex-col md:flex-row gap-6 md:gap-12 items-center max-w-320 mx-auto '>
+                <div className='flex justify-center items-center bg-gray-200 w-full md:w-1/2 rounded-md md:rounded-2xl'>
+                    <img className='h-full p-4 md:p-18' src={image} alt="" />
                 </div>
 
-                <div className='w-1/2'>
+                <div className='w-full md:w-1/2 '>
                     <h2 className='playfair-display-font text-[40px] font-bold mb-4'>{bookName}</h2>
 
                     <h3 className='text-[20px] font-medium mb-6 '>By : {author}</h3>
@@ -37,7 +37,7 @@ const BookDetails = () => {
                         }
                     </div>
 
-                    <div className='flex gap-16 items-center border-t-1 border-gray-400 mt-6 pt-6 mb-8'>
+                    <div className='flex gap-8 md:gap-16 items-center border-t-1 border-gray-400 mt-6 pt-6 mb-8'>
                         <div className='text-gray-400'>
                             <h4>Number of Pages:</h4>
                             <h4>Publisher:</h4>
@@ -51,9 +51,9 @@ const BookDetails = () => {
                             <h4>{rating}</h4>
                         </div>
                     </div>
-                    <div className='md:flex hidden gap-4 font-semibold text-white'>
-                        <button className='border-1 border-gray-400 px-7 py-3 rounded-md cursor-pointer'>Read</button>
-                        <button className='bg-blue-400 px-7 py-3 rounded-md cursor-pointer'>Wishlist</button>
+                    <div className='flex gap-4 font-semibold text-white'>
+                        <button className='border-1 border-gray-400 px-7 py-2 md:py-3 rounded-md cursor-pointer'>Read</button>
+                        <button className='bg-blue-400 px-7 py-2 md:py-3 rounded-md cursor-pointer'>Wishlist</button>
                     </div>
                 </div>
             </div>
